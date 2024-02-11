@@ -6,7 +6,7 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
 # Load an image from file
-image_path = 'C:\\Users\\Sonia K\\OneDrive\\Documents\\My Work\\image-processing-opencv\\images\\test_image.jpg'
+image_path = 'C:\\Users\\Sonia K\\OneDrive\\Documents\\My Work\\image-processing-opencv\\images\\output_image.jpg'
 image = cv2.imread(image_path)
 
 # Convert the image to grayscale
@@ -25,7 +25,7 @@ plt.show()
 
 # Display the thresholded image for inspection
 cv2.imshow('Thresholded Image', thresholded_image)
-cv2.waitKey()
+cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 # Perform OCR (text extraction)
@@ -42,5 +42,5 @@ if extracted_text:
         file.write(extracted_text)
     print(f"Extracted text saved to '{output_file_path}'")
 else:
-    print("No text detected. OCR may have failed to recognize text in the image.")
+    print("No text detected. OCR may have failed to recognize text in the image. Redo")
 
